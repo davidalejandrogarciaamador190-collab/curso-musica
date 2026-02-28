@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academia de Música | Dir. David García</title>
+    <style>
+        :root {
+            --primario: #1a252f;
+            --acento: #e74c3c;
+            --blanco: #ffffff;
+            --texto: #333;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            background-image: url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--texto);
+        }
+
+        /* Header con Branding Personal */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), 
+                        url('https://images.unsplash.com/photo-1514320298573-7391e98a3583?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            padding: 100px 20px;
+            text-align: center;
+            color: white;
+            border-bottom: 5px solid var(--acento);
+        }
+
+        header h1 { font-size: 3.2rem; margin: 0; letter-spacing: 2px; }
+        header p { font-style: italic; font-size: 1.3rem; opacity: 0.9; }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: rgba(244, 247, 246, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        /* Sección del Director */
+        .director-info {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .director-info h2 { color: var(--primario); margin-bottom: 5px; }
+        .director-info span { color: var(--acento); font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
+
+        .temario {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .card {
+            background: var(--blanco);
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .card-icon { font-size: 2.5rem; color: var(--acento); margin-bottom: 10px; }
+
+        /* Formulario Profesional */
+        .registro-caja { background: #fff; padding: 30px; border-radius: 8px; border: 1px solid #eee; }
+        
+        form { display: flex; flex-direction: column; gap: 15px; max-width: 450px; margin: auto; }
+        
+        label { font-weight: bold; font-size: 0.85rem; color: #555; }
+        
+        input, select { padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; }
+
+        button {
+            background: var(--primario);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 1.1rem;
+        }
+
+        button:hover { background: var(--acento); }
+
+        /* Footer en Negro con fondo para legibilidad */
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #000000;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.8);
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Academia de Música</h1>
+        <p>Dirigida por David Alejandro Garcia Amador</p>
+    </header>
+
+    <div class="container">
+        <section class="director-info">
+            <span>Fundador & Director</span>
+            <h2>David Alejandro Garcia Amador</h2>
+            <p>Comprometido con la formación de la nueva generación de músicos.</p>
+        </section>
+
+        <section>
+            <h2 style="text-align: center;">Programa de Formación Profesional</h2>
+            <div class="temario">
+                <div class="card">
+                    <div class="card-icon">🎸</div>
+                    <h3>Fase Inicial</h3>
+                    <p>Mes 1-2: Fundamentos técnicos y teoría aplicada.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎹</div>
+                    <h3>Fase Intermedia</h3>
+                    <p>Mes 3-4: Armonía moderna y ejecución rítmica.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎤</div>
+                    <h3>Fase Maestra</h3>
+                    <p>Mes 5-6: Interpretación avanzada y graduación.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="registro-caja">
+            <h2 style="text-align: center;">Solicitud de Inscripción</h2>
+            <form action="https://formsubmit.co/davidalejandrogarciaamador190@gmail.com" method="POST">
+                <input type="hidden" name="_next" value="https://curso-musica.netlify.app/gracias.html">
+                <input type="hidden" name="_captcha" value="false">
+
+                <label>Nombre del Estudiante</label>
+                <input type="text" name="nombre" required>
+
+                <label>Correo Electrónico</label>
+                <input type="email" name="email" required>
+
+                <label>Instrumento Principal</label>
+                <select name="instrumento">
+                    <option value="guitarra">Guitarra</option>
+                    <option value="piano">Piano</option>
+                    <option value="canto">Canto</option>
+                    <option value="bajo">Bajo</option>
+                </select>
+
+                <button type="submit">Enviar Solicitud</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2026 Academia de Música David Alejandro GArcia Amador | Todos los derechos reservados.
+    </footer>
+
+</body>
+</html>
